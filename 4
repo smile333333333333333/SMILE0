@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>H.E.E. Employee Portal</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#edf2f7;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+header{
+    background:#0d3d66;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.loginBox{
+
+    width:420px;
+    max-width:90%;
+
+    margin:80px auto;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:10px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+input{
+
+width:100%;
+padding:12px;
+margin-top:15px;
+font-size:16px;
+
+}
+
+button{
+
+width:100%;
+padding:14px;
+margin-top:20px;
+background:#0d3d66;
+color:white;
+border:none;
+cursor:pointer;
+font-size:16px;
+
+}
+
+button:hover{
+
+background:#15548c;
+
+}
+
+#error{
+
+margin-top:20px;
+color:red;
+text-align:center;
+
+}
+
+#success{
+
+margin-top:25px;
+display:none;
+border-top:1px solid #ddd;
+padding-top:20px;
+
+}
+
+.token{
+
+font-size:40px;
+font-weight:bold;
+color:#0d3d66;
+margin:20px 0;
+
+}
+
+.notice{
+
+background:#eef6ff;
+
+padding:15px;
+
+border-left:5px solid #0d3d66;
+
+margin-top:20px;
+
+}
+
+footer{
+
+text-align:center;
+
+margin-top:60px;
+
+color:#666;
+
+font-size:14px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>H.E.E. Internal Employee Portal</h1>
+
+<p>Authorized Personnel Only</p>
+
+</header>
+
+<div class="loginBox">
+
+<h2>Employee Login</h2>
+
+<input
+id="user"
+placeholder="Employee ID">
+
+<input
+id="pass"
+type="password"
+placeholder="Password">
+
+<button onclick="login()">
+
+Login
+
+</button>
+
+<div id="error"></div>
+
+<div id="success">
+
+<h3>ACCESS GRANTED</h3>
+
+<p>Welcome back.</p>
+
+<p>
+
+Clearance Level:
+<b>2</b>
+
+</p>
+
+<p>
+
+Project Access Token
+
+</p>
+
+<div class="token">
+
+9123
+
+</div>
+
+<div class="notice">
+
+<b>Internal Memo</b>
+
+<br><br>
+
+Project files remain restricted.
+
+Only employees with the proper authorization may
+access the Internal Research Terminal.
+
+</div>
+
+<br>
+
+<button onclick="window.location='terminal.html'">
+
+Open Research Terminal
+
+</button>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 H.E.E. Internal Network
+
+</footer>
+
+<script>
+
+function login(){
+
+let u=document.getElementById("user").value.trim().toUpperCase();
+
+let p=document.getElementById("pass").value.trim();
+
+if(u==="RESEARCHER" && p==="2234"){
+
+document.getElementById("error").innerHTML="";
+
+document.getElementById("success").style.display="block";
+
+}else{
+
+document.getElementById("success").style.display="none";
+
+document.getElementById("error").innerHTML="Access Denied.";
+
+}
+
+}
+
+</script>
+
+<!--
+
+NOTICE TO IT STAFF
+
+Terminal Address:
+
+terminal.html
+
+Access Token:
+9123
+
+Employee Reminder:
+
+Keep morale high.
+
+-->
+
+</body>
+
+</html>

@@ -119,13 +119,169 @@ case "HELP":
 out.innerHTML=
 `AVAILABLE COMMANDS
 
+case "HELP":
+
+print(`AVAILABLE COMMANDS
+
 HELP
 STATUS
 PROJECTS
 DIRECTORY
 MEMO
+SITE7
+NEWS
+MAP
+LOGS
+CAMERAS
+VISITORS
+WHOAMI
+SMILE
+HANDBOOK
 9123
-LOGOUT`;
+CLEAR
+
+case "HANDBOOK":
+
+print(`Opening Employee Handbook...
+
+Please wait...`);
+
+setTimeout(function(){
+
+window.location.href="handbook.html";
+
+},1500);
+
+break;
+
+case "NEWS":
+
+print(`COMPANY NEWS
+
+• New laboratory completed.
+
+• Employee Safety Week begins Monday.
+
+• Congratulations to Team Echo.
+
+• Research Site 7 remains closed for maintenance.
+
+End of News.`);
+
+break;
+
+case "CAMERAS":
+
+print(`SECURITY CAMERAS
+
+Lobby........ONLINE
+
+Warehouse....ONLINE
+
+Research Wing....ONLINE
+
+Site 7........NO SIGNAL
+
+Last update:
+14 years ago.`);
+
+break;
+
+case "LOGS":
+
+print(`SYSTEM LOGS
+
+03:11 AM
+Door opened.
+
+03:11 AM
+Door closed.
+
+03:12 AM
+No badge detected.
+
+03:13 AM
+Log unavailable.`);
+
+break;
+
+case "MAP":
+
+print(`FACILITY MAP
+
+Administration
+
+Laboratories
+
+Warehouse
+
+Power Station
+
+████████████
+
+Map incomplete.`);
+
+break;
+
+case "VISITORS":
+
+print(`VISITOR LOG
+
+Today:
+0 Visitors
+
+Yesterday:
+0 Visitors
+
+Last Week:
+0 Visitors
+
+Historical records unavailable.`);
+
+break;
+
+case "WHOAMI":
+
+print(`Current User
+
+RESEARCHER
+
+Clearance Level:
+2
+
+Department:
+Research Division`);
+
+break;
+
+case "SMILE":
+
+print(`Employee Wellness Reminder
+
+A positive attitude creates
+a positive workplace.
+
+Remember to smile.`);
+
+break;
+
+case "1987":
+
+print(`FOUNDATION RECORD
+
+Company Founded
+
+1987
+
+Founding documents archived.
+
+One page missing.`);
+
+break;
+  
+`);
+
+break;`;
 
 break;
 

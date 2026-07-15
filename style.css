@@ -1,0 +1,183 @@
+/* ===================================
+   H.E.E. Research Solutions
+   Corporate Stylesheet
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fa;
+    color:#333;
+    line-height:1.6;
+}
+
+header{
+    background:#0d3d66;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    position:sticky;
+    top:0;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+.logo h1{
+    font-size:32px;
+    letter-spacing:3px;
+}
+
+.logo p{
+    font-size:13px;
+    color:#d9e5ef;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:.25s;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#9fd3ff;
+}
+
+.hero{
+    background:linear-gradient(rgba(10,40,65,.8), rgba(10,40,65,.8)),
+    url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:120px 30px;
+}
+
+.hero h2{
+    font-size:52px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:20px;
+}
+
+.button{
+    display:inline-block;
+    margin-top:35px;
+    background:white;
+    color:#0d3d66;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+.button:hover{
+    background:#dfefff;
+}
+
+section{
+    padding:80px 12%;
+}
+
+section h2{
+    margin-bottom:25px;
+    color:#0d3d66;
+    font-size:34px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    padding:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:#0d3d66;
+}
+
+#employeeButton{
+    margin-top:25px;
+    padding:14px 25px;
+    background:#0d3d66;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.2s;
+}
+
+#employeeButton:hover{
+    background:#15548c;
+}
+
+footer{
+    background:#0d3d66;
+    color:white;
+    text-align:center;
+    padding:45px;
+}
+
+footer p{
+    margin-top:10px;
+    color:#d0d9e3;
+}
+
+/* Hidden ARG clue (view source to see this comment)
+   "Some doors are not linked."
+*/
+
+@media(max-width:900px){
+
+header{
+    flex-direction:column;
+    text-align:center;
+}
+
+nav{
+    margin-top:20px;
+}
+
+nav a{
+    display:inline-block;
+    margin:10px;
+}
+
+.hero h2{
+    font-size:38px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+section{
+    padding:60px 8%;
+}
+
+}

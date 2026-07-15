@@ -1,202 +1,419 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+// =======================================
+// H.E.E. INTERNAL TERMINAL v2.0
+// =======================================
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+const output = document.getElementById("output");
+const command = document.getElementById("command");
 
-<title>H.E.E. Archive Database</title>
+function print(text){
+    output.textContent = text;
+}
 
-<style>
+function boot(){
 
-body{
+print(`H.E.E. INTERNAL TERMINAL
 
-background:#111;
-color:#ddd;
-font-family:Courier New, monospace;
-margin:40px;
+Initializing...
+
+Loading Employee Database........OK
+Loading Archive Server...........OK
+Loading Research Records.........OK
+Loading Security Logs............OK
+
+Employee Verified.
+
+Clearance Level 2
+
+Type HELP`);
 
 }
 
-h1{
+boot();
 
-color:white;
+command.addEventListener("keydown",function(e){
+
+if(e.key==="Enter"){
+run();
+}
+
+});
+
+function run(){
+
+const cmd=command.value.trim().toUpperCase();
+
+switch(cmd){
+
+case "HELP":
+
+print(`AVAILABLE COMMANDS
+
+HELP
+STATUS
+PROJECTS
+DIRECTORY
+MEMO
+SITE7
+NEWS
+MAP
+LOGS
+CAMERAS
+VISITORS
+WHOAMI
+HANDBOOK
+SMILE
+9123
+CLEAR`);
+
+break;
+
+case "STATUS":
+
+print(`SYSTEM STATUS
+
+Research Division.......ONLINE
+
+Archive Server..........ONLINE
+
+Communications..........ONLINE
+
+Security................ONLINE
+
+Remote Monitoring.......OFFLINE
+
+One remote location could not
+be contacted.`);
+
+break;
+
+case "PROJECTS":
+
+print(`KNOWN PROJECTS
+
+ATLAS
+
+ECHO
+
+ORCHARD
+
+██████████
+
+One project has been removed
+from the public database.`);
+
+break;
+
+case "DIRECTORY":
+
+print(`EMPLOYEE DIRECTORY
+
+Dr. Mason
+
+L. Carter
+
+R. Evans
+
+J. Cole
+
+One employee record is missing.`);
+
+break;
+
+case "MEMO":
+
+print(`INTERNAL MEMO
+
+Employees are reminded to
+report prolonged laughter
+lasting more than five minutes.
+
+Repeated incidents should
+be reported to Medical.
+
+Thank you for your cooperation.`);
+
+break;
+
+case "SITE7":
+
+print(`RESEARCH SITE 7
+
+Status:
+Inactive
+
+Coordinates:
+Unavailable
+
+Building Plans:
+Unavailable
+
+Personnel:
+Unavailable
+
+Further information requires
+Level 5 Clearance.`);
+
+break;
+
+case "NEWS":
+
+print(`COMPANY NEWS
+
+• New laboratory completed.
+
+• Safety inspections passed.
+
+• Team Echo received recognition.
+
+• Site 7 remains closed for
+scheduled maintenance.`);
+
+break;
+
+case "MAP":
+
+print(`FACILITY MAP
+
+Administration
+
+Research Wing
+
+Laboratories
+
+Warehouse
+
+Power Station
+
+████████████
+
+Map incomplete.`);
+
+break;
+
+case "LOGS":
+
+print(`SYSTEM LOGS
+
+03:11
+Door Opened
+
+03:11
+Door Closed
+
+03:12
+No Badge Detected
+
+03:13
+Record Corrupted`);
+
+break;
+
+  // =======================================
+// H.E.E. INTERNAL TERMINAL v2.0
+// =======================================
+
+const output = document.getElementById("output");
+const command = document.getElementById("command");
+
+function print(text){
+    output.textContent = text;
+}
+
+function boot(){
+
+print(`H.E.E. INTERNAL TERMINAL
+
+Initializing...
+
+Loading Employee Database........OK
+Loading Archive Server...........OK
+Loading Research Records.........OK
+Loading Security Logs............OK
+
+Employee Verified.
+
+Clearance Level 2
+
+Type HELP`);
 
 }
 
-.document{
+boot();
 
-background:#1c1c1c;
+command.addEventListener("keydown",function(e){
 
-padding:20px;
-
-margin:30px 0;
-
-border-left:5px solid #555;
-
+if(e.key==="Enter"){
+run();
 }
 
-.redacted{
+});
 
-background:#000;
-color:#000;
-padding:2px 6px;
-user-select:none;
+function run(){
 
-}
+const cmd=command.value.trim().toUpperCase();
 
-.note{
+switch(cmd){
 
-color:#999;
-font-style:italic;
+case "HELP":
 
-}
+print(`AVAILABLE COMMANDS
 
-.warning{
+HELP
+STATUS
+PROJECTS
+DIRECTORY
+MEMO
+SITE7
+NEWS
+MAP
+LOGS
+CAMERAS
+VISITORS
+WHOAMI
+HANDBOOK
+SMILE
+9123
+CLEAR`);
 
-color:#ff4444;
-font-weight:bold;
+break;
 
-}
+case "STATUS":
 
-</style>
+print(`SYSTEM STATUS
 
-</head>
+Research Division.......ONLINE
 
-<body>
+Archive Server..........ONLINE
 
-<h1>H.E.E. Archived Records</h1>
+Communications..........ONLINE
 
-<p class="warning">
+Security................ONLINE
 
-Clearance Level 4 Required
+Remote Monitoring.......OFFLINE
 
-Some files have been automatically redacted.
+One remote location could not
+be contacted.`);
 
-</p>
+break;
 
-<div class="document">
+case "PROJECTS":
 
-<h2>Archive 001</h2>
+print(`KNOWN PROJECTS
 
-<p>
+ATLAS
 
-Research Site 7 was officially closed on
-<span class="redacted">██████████</span>.
+ECHO
 
-The reason for closure remains
-<span class="redacted">██████████████</span>.
+ORCHARD
 
-No further exploration has been approved.
+██████████
 
-</p>
+One project has been removed
+from the public database.`);
 
-</div>
+break;
 
-<div class="document">
+case "DIRECTORY":
 
-<h2>Archive 002</h2>
+print(`EMPLOYEE DIRECTORY
 
-<p>
+Dr. Mason
 
-The structure informally referred to by several
-employees as
-<span class="redacted">████████</span>
+L. Carter
 
-does not exist in official documentation.
+R. Evans
 
-Employees are reminded that discussing
-unregistered facilities violates company policy.
+J. Cole
 
-</p>
+One employee record is missing.`);
 
-</div>
+break;
 
-<div class="document">
+case "MEMO":
 
-<h2>Archive 003</h2>
+print(`INTERNAL MEMO
 
-<p>
+Employees are reminded to
+report prolonged laughter
+lasting more than five minutes.
 
-Psychological evaluations indicate that
-employees returning from Site 7 exhibit
-consistent behavioral changes.
+Repeated incidents should
+be reported to Medical.
 
-Observed symptoms include:
+Thank you for your cooperation.`);
 
-<br><br>
+break;
 
-• Elevated mood
+case "SITE7":
 
-<br>
+print(`RESEARCH SITE 7
 
-• Continuous smiling
+Status:
+Inactive
 
-<br>
+Coordinates:
+Unavailable
 
-• Unprovoked laughter
+Building Plans:
+Unavailable
 
-<br>
+Personnel:
+Unavailable
 
-• Refusal to discuss their experience
+Further information requires
+Level 5 Clearance.`);
 
-<br><br>
+break;
 
-Cause remains unknown.
+case "NEWS":
 
-</p>
+print(`COMPANY NEWS
 
-</div>
+• New laboratory completed.
 
-<div class="document">
+• Safety inspections passed.
 
-<h2>Archive 004</h2>
+• Team Echo received recognition.
 
-<p>
+• Site 7 remains closed for
+scheduled maintenance.`);
 
-"It wanted us to keep smiling."
+break;
 
-</p>
+case "MAP":
 
-<p class="note">
+print(`FACILITY MAP
 
-— Source removed by request of H.E.E. Legal Department.
+Administration
 
-</p>
+Research Wing
 
-</div>
+Laboratories
 
-<div class="document">
+Warehouse
 
-<h2>Archive 005</h2>
+Power Station
 
-<p>
+████████████
 
-The following phrase has appeared in
-multiple employee interviews.
+Map incomplete.`);
 
-</p>
+break;
 
-<h2>
+case "LOGS":
 
-"IT IS STILL OPEN."
+print(`SYSTEM LOGS
 
-</h2>
+03:11
+Door Opened
 
-</div>
+03:11
+Door Closed
 
-<!--
+03:12
+No Badge Detected
 
-Archive Index
+03:13
+Record Corrupted`);
 
-006
-008
-011
-019
-
-007 Missing
-
--->
-
-</body>
-</html>
+break;

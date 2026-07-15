@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>H.E.E. Internal Terminal</title>
+
+<style>
+
+body{
+
+background:#000;
+color:#00ff66;
+font-family:Consolas, monospace;
+padding:30px;
+
+}
+
+#terminal{
+
+max-width:900px;
+
+}
+
+input{
+
+background:black;
+color:#00ff66;
+border:1px solid #00ff66;
+padding:10px;
+width:350px;
+font-family:inherit;
+font-size:16px;
+
+}
+
+button{
+
+background:black;
+color:#00ff66;
+border:1px solid #00ff66;
+padding:10px 18px;
+cursor:pointer;
+
+}
+
+#output{
+
+margin-top:25px;
+white-space:pre-wrap;
+line-height:1.6;
+
+}
+
+hr{
+
+border-color:#004d22;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="terminal">
+
+<h2>H.E.E. INTERNAL RESEARCH TERMINAL</h2>
+
+<hr>
+
+<p>
+
+Employee Verified
+
+Clearance Level 2
+
+</p>
+
+<p>
+
+Enter Command
+
+</p>
+
+<input
+id="command"
+autocomplete="off">
+
+<button onclick="run()">
+
+Run
+
+</button>
+
+<div id="output">
+
+Type HELP
+
+</div>
+
+</div>
+
+<script>
+
+function run(){
+
+let cmd=document.getElementById("command").value.trim().toUpperCase();
+
+let out=document.getElementById("output");
+
+switch(cmd){
+
+case "HELP":
+
+out.innerHTML=
+`AVAILABLE COMMANDS
+
+HELP
+STATUS
+PROJECTS
+DIRECTORY
+MEMO
+9123
+LOGOUT`;
+
+break;
+
+case "STATUS":
+
+out.innerHTML=
+`Facility Status
+
+Research Wing........ONLINE
+
+Environmental Lab....ONLINE
+
+Testing Division.....ONLINE
+
+Remote Site..........OFFLINE
+
+One location unavailable.`;
+
+break;
+
+case "PROJECTS":
+
+out.innerHTML=
+`KNOWN PROJECTS
+
+ATLAS
+ECHO
+ORCHARD
+
+████████`;
+
+break;
+
+case "DIRECTORY":
+
+out.innerHTML=
+`EMPLOYEE DIRECTORY
+
+Dr. Mason
+L. Carter
+R. Evans
+J. Cole
+
+1 Record Missing`;
+
+break;
+
+case "MEMO":
+
+out.innerHTML=
+`Internal Memo
+
+Please report unusual laughter
+to your department supervisor.
+
+Repeated reports are considered
+a maintenance issue.
+
+Continue normal operations.`;
+
+break;
+
+case "9123":
+
+out.innerHTML=
+`ACCESS TOKEN ACCEPTED
+
+Opening...
+
+------------------------------------
+
+INCIDENT REPORT
+
+Date:
+[REDACTED]
+
+Location:
+Research Site 7
+
+Summary:
+
+During routine observation,
+three employees entered
+an unauthorized structure.
+
+One hour later,
+all three exited.
+
+Medical scans showed
+no physical injuries.
+
+Interviews were cancelled.
+
+Reason:
+
+All personnel continued laughing
+throughout questioning.
+
+FILE ENDS.
+
+`;
+
+break;
+
+case "LOGOUT":
+
+window.location="index.html";
+
+break;
+
+default:
+
+out.innerHTML="Unknown Command.";
+
+}
+
+}
+
+document.getElementById("command").addEventListener("keydown",function(e){
+
+if(e.key==="Enter"){
+
+run();
+
+}
+
+});
+
+</script>
+
+<!--
+
+NOTICE
+
+The name "Factory"
+does not appear in any official records.
+
+-->
+
+</body>
+</html>

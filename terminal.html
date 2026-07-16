@@ -10,53 +10,82 @@
 <style>
 
 body{
-
-background:#000;
-color:#00ff66;
-font-family:Consolas, monospace;
-padding:30px;
-
+    margin:0;
+    background:#000;
+    color:#00ff66;
+    font-family:Consolas, monospace;
 }
 
 #terminal{
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+}
 
-max-width:900px;
+h2{
+    margin-bottom:10px;
+}
 
+hr{
+    border:1px solid #006622;
+    margin-bottom:20px;
 }
 
 input{
 
-background:black;
-color:#00ff66;
-border:1px solid #00ff66;
-padding:10px;
-width:350px;
-font-family:inherit;
-font-size:16px;
+    width:75%;
+    background:#000;
+    color:#00ff66;
+
+    border:1px solid #00ff66;
+
+    padding:10px;
+
+    font-family:inherit;
+
+    font-size:16px;
 
 }
 
 button{
 
-background:black;
-color:#00ff66;
-border:1px solid #00ff66;
-padding:10px 18px;
-cursor:pointer;
+    background:#000;
+
+    color:#00ff66;
+
+    border:1px solid #00ff66;
+
+    padding:10px 18px;
+
+    cursor:pointer;
+
+}
+
+button:hover{
+
+background:#003300;
 
 }
 
 #output{
 
 margin-top:25px;
+
 white-space:pre-wrap;
+
 line-height:1.6;
+
+min-height:300px;
 
 }
 
-hr{
+.footer{
 
-border-color:#004d22;
+margin-top:50px;
+
+color:#006622;
+
+font-size:13px;
 
 }
 
@@ -73,22 +102,16 @@ border-color:#004d22;
 <hr>
 
 <p>
-
 Employee Verified
-
+<br>
 Clearance Level 2
-
-</p>
-
-<p>
-
-Enter Command
-
 </p>
 
 <input
 id="command"
-autocomplete="off">
+type="text"
+autocomplete="off"
+placeholder="Enter Command">
 
 <button onclick="run()">
 
@@ -96,324 +119,21 @@ Run
 
 </button>
 
-<div id="output">
+<div id="output"></div>
 
-Type HELP
+<div class="footer">
+
+Internal Research Network v2.0
 
 </div>
 
 </div>
 
-<script>
+<script src="terminal.js"></script>
 
-function run(){
+</body>
 
-let cmd=document.getElementById("command").value.trim().toUpperCase();
-
-let out=document.getElementById("output");
-
-switch(cmd){
-
-case "HELP":
-
-print(`AVAILABLE COMMANDS
-
-HELP
-STATUS
-PROJECTS
-DIRECTORY
-MEMO
-SITE7
-NEWS
-MAP
-LOGS
-CAMERAS
-VISITORS
-WHOAMI
-SMILE
-HANDBOOK
-9123
-CLEAR
-
-case "HANDBOOK":
-
-print(`Opening Employee Handbook...
-
-Please wait...`);
-
-setTimeout(function(){
-
-window.location.href="handbook.html";
-
-},1500);
-
-break;
-
-case "NEWS":
-
-print(`COMPANY NEWS
-
-• New laboratory completed.
-
-• Employee Safety Week begins Monday.
-
-• Congratulations to Team Echo.
-
-• Research Site 7 remains closed for maintenance.
-
-End of News.`);
-
-break;
-
-case "CAMERAS":
-
-print(`SECURITY CAMERAS
-
-Lobby........ONLINE
-
-Warehouse....ONLINE
-
-Research Wing....ONLINE
-
-Site 7........NO SIGNAL
-
-Last update:
-14 years ago.`);
-
-break;
-
-case "LOGS":
-
-print(`SYSTEM LOGS
-
-03:11 AM
-Door opened.
-
-03:11 AM
-Door closed.
-
-03:12 AM
-No badge detected.
-
-03:13 AM
-Log unavailable.`);
-
-break;
-
-case "MAP":
-
-print(`FACILITY MAP
-
-Administration
-
-Laboratories
-
-Warehouse
-
-Power Station
-
-████████████
-
-Map incomplete.`);
-
-break;
-
-case "VISITORS":
-
-print(`VISITOR LOG
-
-Today:
-0 Visitors
-
-Yesterday:
-0 Visitors
-
-Last Week:
-0 Visitors
-
-Historical records unavailable.`);
-
-break;
-
-case "WHOAMI":
-
-print(`Current User
-
-RESEARCHER
-
-Clearance Level:
-2
-
-Department:
-Research Division`);
-
-break;
-
-case "SMILE":
-
-print(`Employee Wellness Reminder
-
-A positive attitude creates
-a positive workplace.
-
-Remember to smile.`);
-
-break;
-
-case "1987":
-
-print(`FOUNDATION RECORD
-
-Company Founded
-
-1987
-
-Founding documents archived.
-
-One page missing.`);
-
-break;
-  
-`);
-
-break;`;
-
-break;
-
-case "STATUS":
-
-out.innerHTML=
-`Facility Status
-
-Research Wing........ONLINE
-
-Environmental Lab....ONLINE
-
-Testing Division.....ONLINE
-
-Remote Site..........OFFLINE
-
-One location unavailable.`;
-
-break;
-
-case "PROJECTS":
-
-out.innerHTML=
-`KNOWN PROJECTS
-
-ATLAS
-ECHO
-ORCHARD
-
-████████`;
-
-break;
-
-case "DIRECTORY":
-
-out.innerHTML=
-`EMPLOYEE DIRECTORY
-
-Dr. Mason
-L. Carter
-R. Evans
-J. Cole
-
-1 Record Missing`;
-
-break;
-
-case "MEMO":
-
-out.innerHTML=
-`Internal Memo
-
-Please report unusual laughter
-to your department supervisor.
-
-Repeated reports are considered
-a maintenance issue.
-
-Continue normal operations.`;
-
-break;
-
-case "9123":
-
-out.innerHTML=
-`ACCESS TOKEN ACCEPTED
-
-Opening...
-
-------------------------------------
-
-INCIDENT REPORT
-
-Date:
-[REDACTED]
-
-Location:
-Research Site 7
-
-Summary:
-
-During routine observation,
-three employees entered
-an unauthorized structure.
-
-One hour later,
-all three exited.
-
-Medical scans showed
-no physical injuries.
-
-Interviews were cancelled.
-
-Reason:
-
-All personnel continued laughing
-throughout questioning.
-
-FILE ENDS.
-
-`;
-
-break;
-
-case "LOGOUT":
-
-window.location="index.html";
-
-break;
-
-default:
-
-out.innerHTML="Unknown Command.";
-
-}
-
-}
-
-document.getElementById("command").addEventListener("keydown",function(e){
-
-if(e.key==="Enter"){
-
-run();
-
-}
-
-});
-
-</script>
-
-<!--
-
-NOTICE
-
-The name "Factory"
-does not appear in any official records.
-
+</html>
 -->
 
 </body>
